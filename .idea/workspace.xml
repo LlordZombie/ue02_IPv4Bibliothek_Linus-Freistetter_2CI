@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50ec33e0-a165-4e4e-ab30-c176921defe0" name="Changes" comment="">
+    <list default="true" id="50ec33e0-a165-4e4e-ab30-c176921defe0" name="Changes" comment="no pasaran">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -31,6 +31,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,11 +44,24 @@
       <option name="presentableId" value="Default" />
       <updated>1694675315029</updated>
       <workItem from="1694675316099" duration="1649000" />
-      <workItem from="1694715841322" duration="5941000" />
+      <workItem from="1694715841322" duration="6162000" />
+      <workItem from="1694866099244" duration="15092000" />
     </task>
+    <task id="LOCAL-00001" summary="no pasaran">
+      <created>1694721983468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694721983468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="no pasaran" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
