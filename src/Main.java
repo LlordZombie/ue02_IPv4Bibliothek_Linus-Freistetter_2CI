@@ -80,7 +80,7 @@ public class Main {
 		if (addressAndSuffix.length != 2) {
 			return -1;
 		}
-		if (to32BitIp(addressAndSuffix[0]) == -1) {
+		if (!toString(to32BitIp(addressAndSuffix[0])).equals(addressAndSuffix[0])) {
 			return -1;
 		}
 		rInt = Integer.parseInt(addressAndSuffix[1]);
@@ -104,7 +104,7 @@ public class Main {
 
 	public static int getNetwork(String network) {
 		String[] partsString = network.split("/");
-		if (!String.valueOf(to32BitIp(partsString[0])).equals(partsString[0])){
+		if (!toString(to32BitIp(partsString[0])).equals(partsString[0])){
 			return -1;
 		}
 		return getNetwork(to32BitIp(partsString[0]), Integer.parseInt(partsString[1]));
@@ -112,9 +112,6 @@ public class Main {
 
 	public static int[] toIntArray(int ip) {
 		int[] rInt = new int[4];
-		if (ip == -1) {
-			return new int[0];
-		}
 		for (int i = 3; i >= 0; i--) {
 			rInt[3 - i] = (ip >>> (i * 8)) & 0xFF;
 		}
@@ -132,7 +129,7 @@ public class Main {
 
 	public static String toString(int network, int suffix) {
 		String ipString = toString(network);
-		if (ipString.isEmpty()) {
+		if (ipString.isEmpty()||suffix<0||suffix>32) {
 			return "";
 		} else {
 			return ipString + "/" + suffix;
@@ -150,7 +147,7 @@ public class Main {
 
 	public static String toHexString(int network, int suffix) {
 		String ipString = toHexString(network);
-		if (ipString.isEmpty()) {
+		if (ipString.isEmpty()||suffix<0||suffix>32) {
 			return "";
 		}
 		return ipString + "/" + suffix;
@@ -168,7 +165,7 @@ public class Main {
 	}
 
 	public static int[] getAllNetworksForNewSuffix(int network, int suffix, int newSuffix) {
-		if (network == -1) {
+		if (suffix<0||suffix>32||newSuffix<0||newSuffix>32) {
 			return new int[0];
 		}
 		int mask = ~0 << (32 - newSuffix);
@@ -182,7 +179,7 @@ public class Main {
 	}
 
 	public static int[] getAllIpsInNetwork(int network, int suffix) {
-		if (network == -1) {
+		if (suffix<0||suffix>32) {
 			return new int[0];
 		}
 		int numAddresses = 1 << (32 - suffix);
