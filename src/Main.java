@@ -184,7 +184,7 @@ public class Main {
      * @return ein array mit allen neuen netzadressen
      */
     public static int[] getAllNetworksForNewSuffix(int network, int suffix, int newSuffix) {
-        return (suffix < 0 || suffix > 32 || newSuffix < 0 || newSuffix > 32 || newSuffix>suffix|| (network < 0 && (network + ((1 << (newSuffix - suffix)) - 1) << (32 - newSuffix)) > 0)) ? new int[0] : IntStream.range(0, 1 << (newSuffix - suffix)).map(i -> (network & (~0 << (32 - newSuffix))) + (i << (32 - newSuffix))).toArray();
+        return (suffix > 32 || newSuffix < 0 || newSuffix > 32 || newSuffix > suffix || (network < 0 && (network + ((1 << (newSuffix - suffix)) - 1) << (32 - newSuffix)) > 0)) ? new int[0] : IntStream.range(0, 1 << (newSuffix - suffix)).map(i -> (network & (~0 << (32 - newSuffix))) + (i << (32 - newSuffix))).toArray();
     }
 
     /**
